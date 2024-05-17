@@ -5,29 +5,35 @@ import Dropdown from "./templates/Dropdown";
 import axios from "../utils/axios";
 import Loader from "./Loader";
 import Verticalcards from "./templates/Verticalcards";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function Trending() {
   const navigate = useNavigate();
   const [category, setcategory] = useState("all");
   const [duration, setduration] = useState("day");
-  const [trending, settrending] = useState(null);
+  const [trending, settrending] = useState([]);
+  const [page, setpage] = useState(1);
 
-  const getTrending= async () => {
+  const getTrending = async () => {
     try {
       const { data } = await axios.get(`trending/${category}/${duration}`);
       console.log(data);
-      settrending(data.results);
+      // settrending(data.results);
+      settrending((prevState) => [...prevState, ...data.results]); //in this line written only for infinte scroll it add data continuosly in trending
+      setpage((prev) => prev + 1);
+      console.log(data.results);
     } catch (error) {
       console.log("Error:", error);
     }
   };
   useEffect(() => {
+    setpage(1)
     getTrending();
-  }, [category,duration])
-  
-  return trending ? (
-    <div className="px-5 py-2 w-screen h-screen">
-      <div className="w-full h-[10vh] flex items-center justify-between">
+  }, [category, duration]);
+
+  return trending.length > 0 ? (
+    <div className="w-screen h-screen">
+      <div className="px-4 w-full h-[10vh] flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link onClick={() => navigate(-1)}>
             <i className="ri-arrow-left-fill text-xl"></i>
@@ -39,16 +45,30 @@ function Trending() {
           <Dropdown
             title="Category"
             options={["movie", "tv", "all"]}
-            func={(e)=>setcategory(e.target.value)} 
-                     />
-          <Dropdown title="Duration" options={["Week", "day"]}  func={(e)=>setduration(e.target.value)}   />
+            func={(e) => setcategory(e.target.value)}
+          />
+          <Dropdown
+            title="Duration"
+            options={["week", "day"]}
+            func={(e) => setduration(e.target.value)}
+          />
         </div>
       </div>
-      <Verticalcards data={trending} title={category}/>
+
+      <InfiniteScroll
+        dataLength={trending.length}
+        next={getTrending}
+        // inverse={true} //
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+        scrollableTarget="scrollableDiv"
+      >
+        <Verticalcards data={trending} title={category} />
+      </InfiniteScroll>
     </div>
   ) : (
-    <Loader/>
-  )
+    <Loader />
+  );
 }
 
 export default Trending;

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//1.32
+
 function Header({ data }) {
-  console.log(data);
+  // console.log(data);
   return (
     <div
       style={{
@@ -11,18 +11,20 @@ function Header({ data }) {
         })`,
         backgroundPosition: "top",
         backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "no-repeat"
       }}
-      className="w-full h-[60vh] flex flex-col justify-end p-14"
+      className="Poster w-full h-[50vh] flex flex-col justify-end items-start px-14 py-8"
     >
-      <h1 className="w-3/4 text-5xl font-black tracking-wider">
+      <h1 className="Heading w-2/3 text-5xl font-black tracking-wider">
         {data.name || data.original_name || data.title || data.original_title}
       </h1>
-      <p className="w-2/3 my-3 ">
-        {data.overview.slice(0, 200)} ....
-        <Link className="text-sky-400">more</Link>
+
+      <p className="Description w-2/4 my-3">
+        {data.overview.slice(0, 200)} 
+        {data.overview && <Link className="text-sky-400">....more</Link>}
       </p>
-      <p className="flex w-auto gap-1 items-center">
+
+      <p className="Information flex w-auto gap-1 items-center">
         {data.release_date && (
           <>
             <i className="ri-megaphone-fill  text-cyan-400 text-lg"></i>
@@ -41,6 +43,7 @@ function Header({ data }) {
           </>
         )}
       </p>
+      <Link className="bg-sky-600 hover:bg-sky-700 font-medium p-2 mt-4 rounded-md">Watch Trailer </Link>
     </div>
   );
 }

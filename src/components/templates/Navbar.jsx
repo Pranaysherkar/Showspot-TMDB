@@ -22,9 +22,9 @@ function Navbar() {
   }, [query]);
 
   return (
-    <div className="w-full h-[7vh] flex items-center justify-center my-2 relative ">
-      <div className="w-1/2 h-5/6 flex items-center border border-zinc-500 rounded-xl overflow-hidden">
-        <div className="w-[90%] h-full flex items-center">
+    <div className="w-full h-[8vh] flex items-center justify-center my-1 relative ">
+      <div className="Search_Input w-1/2 h-5/6 flex items-center border border-zinc-500 rounded-xl overflow-hidden">
+        <div className="w-[80vh] h-full flex items-center">
           <input
             className="w-[95%] h-full bg-transparent outline-none px-2 text-lg"
             type="text"
@@ -41,7 +41,8 @@ function Navbar() {
         </div>
         <i className="ri-search-line w-[10%] h-full bg-zinc-800 text-2xl flex items-center justify-center cursor-pointer hover:text-zinc-400"></i>
       </div>
-      <div className=" absolute w-[50%] max-h-[50vh] bg-zinc-700  text-base top-[100%] rounded-lg overflow-auto">
+
+      <div className="Search_suggestion absolute w-[50%] max-h-[50vh] bg-zinc-700  text-base top-[100%] rounded-lg overflow-auto">
         {search.map((elem, index) => (
           <Link
             key={index}

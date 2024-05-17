@@ -13,14 +13,14 @@ function Sidenavbar() {
         <h1 className="text-xl font-semibold mt-12 mb-5 text-slate-200 ">
           New Feeds
         </h1>
-        <Link className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
+        <Link to={"/trending"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-fire-line mr-4"></i>Trending
         </Link>
         <Link className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-sparkling-line mr-4"></i>Popular
         </Link>
         <Link className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
-          <i className="ri-movie-line mr-4"></i>Movie
+          <i className="ri-movie-line mr-4"></i>Movies
         </Link>
         <Link className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-tv-line mr-4"></i>Tv shows

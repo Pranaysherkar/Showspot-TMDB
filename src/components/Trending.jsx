@@ -13,22 +13,35 @@ function Trending() {
   const [duration, setduration] = useState("day");
   const [trending, settrending] = useState([]);
   const [page, setpage] = useState(1);
+  const [hasmore, sethasmore] = useState(true)
 
   const getTrending = async () => {
     try {
-      const { data } = await axios.get(`trending/${category}/${duration}`);
+      const { data } = await axios.get(`trending/${category}/${duration}?page=${page}`);
       console.log(data);
       // settrending(data.results);
-      settrending((prevState) => [...prevState, ...data.results]); //in this line written only for infinte scroll it add data continuosly in trending
-      setpage((prev) => prev + 1);
+      if (data.results.length > 0) {
+        setpage((prev) => prev + 1);
+        settrending((prevState) => [...prevState, ...data.results]);
+      }else{
+        sethasmore(false)
+      }
       console.log(data.results);
     } catch (error) {
       console.log("Error:", error);
     }
   };
+  const refreshHandler = () => {
+    if (trending.length === 0) {
+      getTrending();
+    } else {
+      setpage(1);
+      settrending([]);
+      getTrending()
+    }
+  };
   useEffect(() => {
-    setpage(1)
-    getTrending();
+    refreshHandler()
   }, [category, duration]);
 
   return trending.length > 0 ? (

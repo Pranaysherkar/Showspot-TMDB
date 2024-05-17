@@ -27,7 +27,6 @@ function Home() {
   const trendingWallpaper = async () => {
     try {
       const { data } = await axios.get(`trending/${category}/day`);
-      console.log(data);
       settrending(data.results);
     } catch (error) {
       console.log("Error:", error);

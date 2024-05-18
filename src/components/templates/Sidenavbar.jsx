@@ -19,13 +19,13 @@ function Sidenavbar() {
         <Link to={"/popular"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-sparkling-line mr-4"></i>Popular
         </Link>
-        <Link to={"/movies"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
+        <Link to={"/movie"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-movie-line mr-4"></i>Movies
         </Link>
-        <Link to={"/tv_shows"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
+        <Link to={"/tv"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-tv-line mr-4"></i>Tv shows
         </Link>
-        <Link to={"person"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
+        <Link to={"/person"} className="hover:bg-sky-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-group-line mr-4"></i>People
         </Link>
       </nav>

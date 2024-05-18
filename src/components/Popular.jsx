@@ -40,7 +40,7 @@ function Popular() {
   }, [category]);
   document.title = "ShowSpot | Popular " + category.toLowerCase();
   return popular.length > 0 ? (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen bg-zinc-900">
       <div className="px-4 w-full h-[10vh] flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Link onClick={() => navigate(-1)}>

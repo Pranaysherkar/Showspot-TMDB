@@ -6,7 +6,7 @@ function Cards({ data }) {
   return (
       <div className="w-full h-[42vh] flex gap-5 overflow-y-hidden m-5">
         {data.map((data, index) => (
-          <div
+          <Link to={`/${data.media_type}/details/${data.id}`}
             key={index}
             className="min-w-[18%] bg-slate-900 mb-5 overflow-hidden rounded-md hover:bg-slate-700"
           >
@@ -35,7 +35,7 @@ function Cards({ data }) {
                 {data.overview && <Link className="text-zinc-400"> ...more</Link>}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
   );

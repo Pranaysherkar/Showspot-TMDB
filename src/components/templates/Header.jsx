@@ -21,7 +21,7 @@ function Header({ data }) {
 
       <p className="Description w-2/4 my-3">
         {data.overview.slice(0, 200)} 
-        {data.overview && <Link className="text-sky-400">....more</Link>}
+        {data.overview && <Link to={`${data.media_type}/details/${data.id}`} className="text-sky-400">....more</Link>}
       </p>
 
       <p className="Information flex w-auto gap-1 items-center">

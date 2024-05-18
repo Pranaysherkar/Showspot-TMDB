@@ -49,7 +49,7 @@ function Home() {
 
             <div className="m-5 flex gap-20">
               <h1 className="text-3xl font-bold ">Trending</h1>
-              <Dropdown title="Filter" options={["movie", "tv", "all"]} func={(e)=> setcategory(e.target.value)} />
+              <Dropdown title="Category" options={["movie", "tv", "all"]} func={(e)=> setcategory(e.target.value)} />
             </div>
 
             <Cards data={trending} />

@@ -68,7 +68,7 @@ function Tvshows() {
         loader={<h4>Loading...</h4>}
         scrollableTarget="scrollableDiv"
       >
-        <Verticalcards data={Tv} title={category} />
+        <Verticalcards data={Tv} title="tv" />
       </InfiniteScroll>
     </div>
   ) : (

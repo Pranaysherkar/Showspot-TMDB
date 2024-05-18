@@ -22,7 +22,7 @@ function Navbar() {
   }, [query]);
 
   return (
-    <div className="w-full h-[8vh] flex items-center justify-center my-1 relative ">
+    <div className="w-full h-[8vh] flex items-center justify-center my-1 relative z-30">
       <div className="Search_Input w-1/2 h-5/6 flex items-center border border-zinc-500 rounded-xl overflow-hidden">
         <div className="w-[80vh] h-full flex items-center">
           <input
@@ -42,9 +42,10 @@ function Navbar() {
         <i className="ri-search-line w-[10%] h-full bg-zinc-800 text-2xl flex items-center justify-center cursor-pointer hover:text-zinc-400"></i>
       </div>
 
-      <div className="Search_suggestion absolute w-[50%] max-h-[50vh] bg-zinc-700  text-base top-[100%] rounded-lg overflow-auto">
+      <div className="Search_suggestion absolute w-[50%] max-h-[50vh] bg-black/40 backdrop-blur-md text-base top-[100%] rounded-lg overflow-auto">
         {search.map((elem, index) => (
           <Link
+          to={`${elem.media_type}/details/${elem.id}`}
             key={index}
             className="w-full p-4 tracking-wider flex items-center border-b hover:bg-zinc-500 font-semibold duration-300"
           >

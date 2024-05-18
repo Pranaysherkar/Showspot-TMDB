@@ -61,7 +61,7 @@ function People() {
           loader={<h4>Loading...</h4>}
           scrollableTarget="scrollableDiv"
         >
-          <Verticalcards data={person} title={category} />
+          <Verticalcards data={person} title="person" />
         </InfiniteScroll>
       </div>
     ) : (

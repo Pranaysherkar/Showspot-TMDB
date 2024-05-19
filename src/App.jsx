@@ -8,7 +8,7 @@ import Tvshows from './components/Tvshows'
 import People from './components/People'
 import Moviedetails from './components/Moviedetails'
 import Tvdetails from './components/Tvdetails'
-import Persondetails from './components/templates/Persondetails'
+import Persondetails from './components/Persondetails'
 import Trailer from './components/templates/Trailer'
 import Notfound from './components/Notfound'
 

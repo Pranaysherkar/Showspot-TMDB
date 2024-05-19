@@ -20,6 +20,7 @@ function Trailer() {
           <ReactPlayer
             height={600}
             width={1200}
+            controls
             url={`https://www.youtube.com/watch?v=${video.key}`}
           ></ReactPlayer>
         </>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Cards({ data }) {
   return (
-      <div className="w-full h-[42vh] flex gap-5 overflow-y-hidden m-5">
+      <div className="w-full h-[42vh] flex gap-5 overflow-y-hidden my-5 mx-2">
         {data.length > 0 ? data.map((data, index) => (
           <Link to={`/${data.media_type}/details/${data.id}`}
             key={index}
@@ -32,7 +32,7 @@ function Cards({ data }) {
               </h1>
               <p className="Description mt-2 text-sm opacity-70">
                 {data.overview.slice(0, 40)} 
-                {data.overview && <Link className="text-zinc-400"> ...more</Link>}
+                {data.overview && <Link to={`${data.media_type}/details/${data.id}`} className="text-zinc-400 hover:text-sky-300"> ...more</Link>}
               </p>
             </div>
           </Link>

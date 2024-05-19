@@ -9,7 +9,7 @@ export const personSlice = createSlice({
   initialState,
   reducers: {
     load_personDetails: (state, action) => {
-      state.info === action.payload;
+      state.info = action.payload;
     },
     remove_personDetails: (state) => {
       state.info = null;

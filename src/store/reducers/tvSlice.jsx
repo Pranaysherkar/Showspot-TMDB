@@ -9,7 +9,7 @@ export const tvSlice = createSlice({
   initialState,
   reducers: {
     load_tvDetails: (state, action) => {
-      state.info === action.payload;
+      state.info = action.payload;
     },
     remove_tvDetails: (state) => {
       state.info = null;

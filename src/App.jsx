@@ -11,6 +11,7 @@ import Tvdetails from './components/Tvdetails'
 import Persondetails from './components/Persondetails'
 import Trailer from './components/templates/Trailer'
 import Notfound from './components/Notfound'
+import About from './components/About'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         </Route>
         <Route path="/person" element={<People/>}/>
         <Route path="/person/details/:id" element={<Persondetails/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="*" element={<Notfound/>}/>
       </Routes>
     </div>

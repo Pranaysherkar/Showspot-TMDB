@@ -33,13 +33,13 @@ function Sidenavbar() {
 
       <nav className="flex flex-col gap-2 text-lg text-zinc-500 tracking-wide font-medium">
         <h1 className="text-lg font-semibold mt-10 mb-4 text-slate-200 tracking-wider">
-          ShowSpot Details
+        Information
         </h1>
-        <Link className="hover:bg-zinc-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
+        <Link to={"/about"} className="hover:bg-zinc-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
           <i className="ri-information-line mr-4"></i>About
         </Link>
-        <Link className="hover:bg-zinc-600 hover:text-white px-3 py-2 duration-300 rounded-lg">
-          <i className="ri-phone-fill mr-4"></i>Contact us
+        <Link target="_blank" to={"https://www.linkedin.com/in/pranay-sherkar-6a0975234/"} className="hover:bg-zinc-600 hover:text-sky-400 px-3 py-2 duration-300 rounded-lg">
+          <i className="ri-linkedin-box-fill mr-4"></i>Linkdin
         </Link>
       </nav>
     </div>

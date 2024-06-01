@@ -44,12 +44,13 @@ function Trending() {
   document.title = "ShowSpot | Trendig " + category.toLowerCase();
   return trending.length > 0 ? (
     <div className="w-screen h-screen">
-      <div className="px-4 w-full h-[10vh] flex items-center justify-between">
+
+      <div className="px-4 md:w-full md:h-[10vh] flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center gap-2">
           <Link onClick={() => navigate(-1)}>
             <i className="ri-arrow-left-fill text-xl hover:text-sky-600"></i>
           </Link>
-          <h1 className=" w-56 text-2xl font-semibold text-zinc-200">
+          <h1 className="md:w-56 md:text-2xl text-3xl my-1 font-semibold text-zinc-200">
             Trending{" "}<span className="capitalize text-sky-400">{category}</span>
           </h1>
         </div>

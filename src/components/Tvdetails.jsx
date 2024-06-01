@@ -34,9 +34,9 @@ function Tvdetails() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="relative w-screen h-[200vh] px-20 py-2 text-white "
+      className="relative w-[100vw] h-[150vh] md:px-20 md:py-5 px-5 text-white"
     >
-      <nav className="w-[44vh] h-10 border-2 flex items-center justify-center rounded-lg gap-10 text-xl">
+      <nav className="md:w-[44vh]  h-10 border-2 flex items-center justify-center rounded-lg gap-10 text-xl">
         <Link onClick={() => navigate(-1)}>
           <i className="ri-arrow-left-fill text-xl hover:text-sky-600"></i>
         </Link>
@@ -63,10 +63,10 @@ function Tvdetails() {
       </nav>
 
       <div className="w-full">
-        <div className="flex my-10">
+        <div className="flex md:flex-row flex-col my-10">
           {" "}
           <img
-            className="h-[56vh] w-[44vh] rounded-md  object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] "
+            className="md:h-[56vh] md:w-[44vh] h-[25vh] rounded-md  object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)]"
             src={
               info.detail.backdrop_path || info.detail.poster_path
                 ? `https://image.tmdb.org/t/p/original/${
@@ -76,27 +76,27 @@ function Tvdetails() {
             }
             alt=""
           />
-          <div className="Detail-1 ml-20">
-            <h1 className="text-5xl font-black">
+          <div className="Detail-1 md:ml-20">
+            <h1 className="md:text-5xl text-2xl font-black">
               {info.detail.name ||
                 info.detail.original_name ||
                 info.detail.title ||
                 info.detail.original_title}
               {info.detail.first_air_date && (
-                <span className=" text-2xl text-zinc-200">
+                <span className="md:text-2xl text-xl text-zinc-200">
                   ({info.detail.first_air_date.split("-")[0]})
                 </span>
               )}
             </h1>
 
-            <div className="detail2 flex items-center gap-10 my-3">
+            <div className="detail2 flex flex-col md:flex-row md:items-center gap-4 md:gap-10 my-3">
               {info.detail.vote_average > 0 && (
                 <>
-                  <h1 className="text-2xl font-semibold w-20 tracking-wide">
+                  <h1 className="md:text-2xl text-lg font-semibold md:w-20 w-36 tracking-wide">
                     User Socre
                   </h1>
 
-                  <span className=" bg-sky-600 w-14 h-14 -ml-10 rounded-full text-lg font-semibold flex items-center justify-center">
+                  <span className=" bg-sky-600 w-14 h-14 md:-ml-10 rounded-full text-lg font-semibold flex items-center justify-center">
                     {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
                   </span>
                 </>
@@ -120,21 +120,21 @@ function Tvdetails() {
               )}
             </div>
 
-            <div className="tagline text-xl font-semibold italic opacity-70 tracking-wide">
+            <div className="tagline md:text-xl text-lg font-semibold italic opacity-70 tracking-wide">
               {info.detail.tagline}
             </div>
             {info.detail.overview && (
               <div className="overview">
-                <h1 className="text-3xl font-medium mt-5 mb-2">Overview</h1>
-                <p className="tracking-wide">{info.detail.overview}</p>
+                <h1 className="md:text-3xl text-xl font-medium mt-5 mb-2">Overview</h1>
+                <p className="md:tracking-wide text-sm">{info.detail.overview}</p>
               </div>
             )}
             {info.translations && (
               <div className="">
-                <h1 className="text-3xl font-medium mt-5 mb-2">
+                <h1 className="md:text-3xl text-xl font-medium mt-5 mb-2">
                   Tv Show Translated
                 </h1>
-                <p className="tracking-wide mb-5">
+                <p className="md:tracking-wide text-sm mb-5">
                   {info.translations.join(", ")}
                 </p>
               </div>
@@ -149,15 +149,15 @@ function Tvdetails() {
           </div>
         </div>
 
-        <div className="Platforms gap-5 flex">
+        <div className="Platforms md:gap-5 gap-2 flex flex-col">
           {info.watchproviders && info.watchproviders.flatrate && (
             <div className="flex items-center gap-x-3">
-              <h1 className="text-lg font-bold">Available on Platfroms</h1>
+              <h1 className="md:text-lg text-base font-bold">Available on Platfroms</h1>
               {info.watchproviders.flatrate.map((w, i) => (
                 <img
                   key={i}
                   title={w.provider_name}
-                  className="w-12 h-12 object-cover rounded-md"
+                  className="md:w-12 md:h-12 w-5 h-5 object-cover rounded-md"
                   src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 />
               ))}
@@ -165,12 +165,12 @@ function Tvdetails() {
           )}
           {info.watchproviders && info.watchproviders.rent && (
             <div className="flex items-center gap-x-3 ">
-              <h1 className="text-lg font-bold">Available on Rent</h1>
+              <h1 className="md:text-lg text-base font-bold">Available on Rent</h1>
               {info.watchproviders.rent.map((w, i) => (
                 <img
                   key={i}
                   title={w.provider_name}
-                  className="w-12 h-12 object-cover rounded-md"
+                  className="md:w-12 md:h-12 w-5 h-5 object-cover rounded-md"
                   src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 />
               ))}
@@ -178,12 +178,12 @@ function Tvdetails() {
           )}
           {info.watchproviders && info.watchproviders.buy && (
             <div className="flex items-center gap-x-3 ">
-              <h1 className="text-lg font-bold">Available to Buy</h1>
+              <h1 className="md:text-lg font-bold">Available to Buy</h1>
               {info.watchproviders.buy.map((w, i) => (
                 <img
                   key={i}
                   title={w.provider_name}
-                  className="w-12 h-12 object-cover rounded-md"
+                  className="md:w-12 md:h-12 w-5 h-5 object-cover rounded-md"
                   src={`https://image.tmdb.org/t/p/original/${w.logo_path}`}
                 />
               ))}
@@ -192,9 +192,10 @@ function Tvdetails() {
         </div>
         <hr className="my-5" />
           {info.detail.seasons && (<h1 className="text-3xl font-semibold text-zinc-300">Seasons</h1>)}
-        <div className="w-full flex overflow-y-hidden gap-2 my-2">
+
+        <div className="md:w-full h-[30vh] flex flex-wrap overflow-y-auto gap-5 justify-center my-2">
           {info.detail.seasons ? (info.detail.seasons.map((s, i) => (
-            <div key={i} className="w-1/2 h-[35vh] rounded-md overflow-hidden">
+            <div key={i} className="md:w-1/5  h-[35vh] rounded-md overflow-hidden">
               <img
                 className="w-full h-[85%] object-cover mr-5"
                 src={

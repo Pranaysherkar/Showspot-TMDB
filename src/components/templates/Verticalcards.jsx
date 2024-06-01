@@ -7,9 +7,9 @@ function Verticalcards({ data, title }) {
   return (
     <div className="w-screen p-5 bg-zinc-900 flex flex-wrap item-center justify-center gap-12">
       {data.map((data, index) => (
-        <Link to={`/${data.media_type || title}/details/${data.id}`} className="relative w-[35vh]" key={index}>
+        <Link to={`/${data.media_type || title}/details/${data.id}`} className="relative w-[35vh] flex flex-col" key={index}>
           <img
-            className="h-[40vh] rounded-md  object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] "
+            className="h-[40vh] rounded-md object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)] "
             src={
               data.backdrop_path || data.poster_path || data.profile_path
                 ? `https://image.tmdb.org/t/p/original/${

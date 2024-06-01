@@ -12,6 +12,7 @@ function Home() {
   const [wallpaper, setwallpaper] = useState(null);
   const [trending, settrending] = useState(null);
   const [category, setcategory] = useState("all");
+  const [shownav, setshownav] = useState(false);
 
   const getWallpaper = async () => {
     try {
@@ -37,25 +38,46 @@ function Home() {
     !wallpaper && getWallpaper();
     trendingWallpaper();
   }, [category]);
-
+  
   return (
     <>
-      <Sidenavbar />
-      <div className="w-[80%] h-full overflow-auto overflow-x-hidden">
-        <Navbar />
+       <Sidenavbar shownav={shownav}setshownav={setshownav}/> 
+      <div className="w-full md:w-[80%] h-full overflow-auto overflow-x-hidden">
+        <div className="w-full flex flex-col sm:flex-row  sm:items-center mt-2 px-1 ">
+          <h1 className="text-2xl md:hidden flex gap-8 sm:justify-start items-end">
+            <button
+              className="w-14 sm:w-8 z-10 cursor-pointer text-gray-300 border-t rounded-xl "
+            onClick ={() => setshownav((prev) => !prev)}
+            >
+              {" "}
+              <i className="ri-menu-fold-4-line text-xl cursor-pointer"></i>
+            </button>
+            <span className="flex">
+              {" "}
+              <i className="ri-movie-2-line  sm:m-0 text-sky-400 text-3xl "></i>{" "}
+              ShowSpot
+            </span>
+          </h1>
+          <Navbar />
+        </div>
+
         {wallpaper && trending ? (
           <>
             <Header data={wallpaper} />
 
-            <div className="m-5 flex gap-20">
-              <h1 className="text-3xl font-bold ">Trending</h1>
-              <Dropdown title="Category" options={["movie", "tv", "all"]} func={(e)=> setcategory(e.target.value)} />
+            <div className="sm:m-5 mx-5 my-2 flex items-center gap-20">
+              <h1 className="text-xl sm:text-3xl font-bold ">Trending</h1>
+              <Dropdown
+                title="Category"
+                options={["movie", "tv", "all"]}
+                func={(e) => setcategory(e.target.value)}
+              />
             </div>
 
             <Cards data={trending} />
           </>
         ) : (
-          <Loader/>
+          <Loader />
         )}
       </div>
     </>

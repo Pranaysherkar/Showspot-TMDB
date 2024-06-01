@@ -11,7 +11,7 @@ function Trailer() {
   const video = useSelector((state) => state[category].info.videos);
   const hasVideo =video && video.key;
   return (
-    <div className="absolute z-10 w-10/12 rounded-md top-1 left-28 h-screen flex items-center justify-center bg-[#18181ba3] backdrop-blur-sm">
+    <div className="absolute z-10 md:w-10/12 w-[90%] rounded-md top-1/2 md:top-1 md:left-28 left-5 md:h-screen flex items-center justify-center bg-[#18181ba3] backdrop-blur-sm">
       { hasVideo && video.key ? (
         <>
           <Link onClick={() => navigate(-1)}>

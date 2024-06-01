@@ -13,13 +13,13 @@ function Header({ data }) {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat"
       }}
-      className="Poster w-full h-[50vh] flex flex-col justify-end items-start px-14 py-8"
+      className="Poster w-full h-[35vh] sm:h-[40vh] md:h-[50vh] flex flex-col justify-end items-start px-4 py-2 sm:px-14 sm:py-8"
     >
-      <h1 className="Heading w-2/3 text-5xl font-black tracking-wider">
+      <h1 className="Heading w-2/3 text-base sm:text-5xl font-black tracking-wider">
         {data.name || data.original_name || data.title || data.original_title}
       </h1>
 
-      <p className="Description w-2/4 my-3">
+      <p className="Description hidden sm:w-2/4 my-3">
         {data.overview.slice(0, 200)} 
         {data.overview && <Link to={`${data.media_type}/details/${data.id}`} className="text-sky-400 hover:text-sky-200">....more</Link>}
       </p>

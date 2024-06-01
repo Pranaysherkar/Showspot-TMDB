@@ -14,9 +14,9 @@ function About() {
       className="bg-zinc-900 h-screen w-screen"
     >
       <div className="w-[100vw] h-[100vh] bg-gray-800/75 backdrop-blur text-white">
-        <h1 className="text-center text-5xl font-bold py-5">About Us</h1>
-        <h1 className="ml-24 text-5xl font-bold"><i className="ri-movie-2-line text-sky-400"></i>Showspot</h1>
-        <div className="w-full px-20 my-10  text-xl font-medium flex gap-5 flex-col items-center justify-center">
+        <h1 className="text-center text-3xl md:text-5xl font-bold py-5">About Us</h1>
+        <h1 className="md:ml-24 md:text-5xl md:text-left text-2xl text-center font-bold"><i className="ri-movie-2-line text-sky-400"></i>Showspot</h1>
+        <div className="w-full md:px-20 mmd:y-10 px-3 md:text-xl text-sm font-medium flex gap-5 flex-col items-center justify-center">
           <p>
             Welcome to{" "}
             <span className="text-sky-400 font-bold italic">ShowSpot</span>,
@@ -47,7 +47,7 @@ function About() {
             and understanding without any intent for misuse."
           </p>
         </div>
-       <div className="w-10/12 mx-20 rounded-md flex gap-14 px-20 text-xl italic capitalize text-slate-300 font-semibold bg-sky-900/100">
+       <div className="md:w-10/12 text-base md:text-xl w-full md:mx-20 rounded-md flex flex-col md:flex-row gap-2 px-5 md:my-2 mt-20 py-2 md:py-1 md:gap-14 md:px-20 italic capitalize text-slate-300 font-semibold bg-sky-900/100">
         <h1 className="hover:text-sky-400 cursor-pointer"><i className=" font-extralight ri-verified-badge-line text-sky-300"></i> Created by Pranay</h1>
         <Link target="_blank" to={"https://www.linkedin.com/in/pranay-sherkar-6a0975234/"} className="hover:text-sky-400 cursor-pointer" ><i className=" font-extralight ri-linkedin-box-fill text-sky-300"></i> Linkdin</Link>
         <Link target="_blank" to={"https://www.instagram.com/neonbytesage_2003/"} className="hover:text-sky-400 cursor-pointer" ><i className=" font-extralight ri-instagram-line text-sky-300"></i> instagram</Link>

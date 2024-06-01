@@ -3,7 +3,7 @@ import React from "react";
 const Dropdown = ({title,options,func}) => {
 
   return (
-    <div className="relative inline-block text-left w-40 text-white text-lg font-semibold">
+    <div className="relative inline-block text-left w-40 text-white text-base sm:text-lg font-semibold">
       <select
         className="block appearance-none w-full bg-gray-600 border border-gray-300 rounded-md shadow-sm px-4 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-sky-400 hover:bg-slate-500 capitalize"
         defaultValue=""

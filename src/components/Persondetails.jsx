@@ -28,8 +28,8 @@ function Persondetails() {
   console.log(info);
 
   return info ? (
-    <div className="w-screen min-h-[100vh] p-10 bg-zinc-">
-      <div className="w-screen flex gap-10 ">
+    <div className="w-screen min-h-[100vh] md:p-10 px-5">
+      <div className="w-screen flex flex-col md:flex-row gap-10 ">
         <div className="w-[45vh] ">
           <nav className="w-20 h-8 border-2 flex items-center justify-center rounded-lg gap-10 text-xl mb-5 hover:bg-sky-600">
             <Link onClick={() => navigate(-1)}>
@@ -91,34 +91,34 @@ function Persondetails() {
             </a>
           </div>
         </div>
-        <div className="personal info py-12 ">
-          <h1 className="text-4xl font-semibold mb-5">{info.detail.name}</h1>
+        <div className="personal info md:py-12 ">
+          <h1 className="md:text-4xl text-3xl font-semibold mb-5">{info.detail.name}</h1>
           <h1 className="text-2xl font-semibold mb-5">Personal Info </h1>
-          <div className="flex gap-2">
-            <h1 className="w-24 text-xl font-semibold">
+          <div className="flex md:flex-row flex-col gap-2">
+            <h1 className="md:w-24 md:text-xl font-semibold">
               Know for{" "}
               <span className="text-sky-400">
                 {info.detail.known_for_department}
               </span>{" "}
             </h1>
-            <h1 className="w-24 text-xl font-semibold text-white">
+            <h1 className="md:w-24 md:text-xl font-semibold text-white">
               Gender{" "}
               <span className=" text-sky-400">
                 {info.detail.gender === 2 ? `male` : `Female`}
               </span>
             </h1>
-            <h1 className="w-28 text-xl font-semibold text-white">
+            <h1 className="md:w-28 md:text-xl font-semibold text-white">
               Birthday{" "}
               <span className="text-sky-400 ">{info.detail.birthday}</span>
             </h1>
             {info.detail.deathday && (
-              <h1 className="w-28 text-xl font-semibold text-white">
+              <h1 className="md:w-28 md:text-xl font-semibold text-white">
                 {" "}
                 Deathday{" "}
                 <span className="text-sky-400 ">{info.detail.deathday}</span>
               </h1>
             )}{" "}
-            <h1 className="w-36 text-xl font-semibold text-white">
+            <h1 className="md:w-36 md:text-xl font-semibold text-white">
               Place of Birth{" "}
               <span className="text-sky-400 inline-block w-96">
                 {info.detail.place_of_birth}
@@ -129,7 +129,7 @@ function Persondetails() {
             <h1 className="text-2xl font-semibold text-white my-2">
               Biography
             </h1>
-            <p className="text-zinc-400 w-11/12">{info.detail.biography}</p>
+            <p className="text-zinc-400 w-11/12 tracking-tighter md:text-base text-sm md:tracking-normal ">{info.detail.biography}</p>
           </div>
         </div>
       </div>
@@ -138,8 +138,8 @@ function Persondetails() {
       <Cards data={info.combinedCredits.cast} />
       <hr className="my-5" />
 
-      <div className="actingDet w-11/12 py-10 h-[50vh] flex items-start gap-10 justify-center">
-        <div className="heading flex gap-10 w-1/4 ">
+      <div className="actingDet w-11/12 py-10 h-[50vh] flex md:flex-row flex-col items-start gap-10 justify-center">
+        <div className="heading flex gap-10 w-auto ">
         <h1 className="text-3xl font-semibold text-sky-400">Acting</h1>
         <Dropdown
             title="category"
@@ -148,7 +148,7 @@ function Persondetails() {
           />
         </div>
 
-        <div className="acting rounded-lg flex flex-col w-1/2 h-full overflow-x-hidden overflow-y-auto shadow-xl shadow-[rgba(139,187,238,0.3)] border-2 border-sky-200">
+        <div className="acting rounded-lg flex flex-col w-auto h-full overflow-x-hidden overflow-y-auto shadow-xl shadow-[rgba(139,187,238,0.3)] border-2 border-sky-200">
           {info[category + "Credits"].cast.map((c, i) => (
             <li
               key={i}

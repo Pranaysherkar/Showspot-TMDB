@@ -19,7 +19,7 @@ function Header({ data }) {
         {data.name || data.original_name || data.title || data.original_title}
       </h1>
 
-      <p className="Description hidden sm:w-2/4 my-3">
+      <p className="Description hidden md:block sm:w-2/4 my-3">
         {data.overview.slice(0, 200)} 
         {data.overview && <Link to={`${data.media_type}/details/${data.id}`} className="text-sky-400 hover:text-sky-200">....more</Link>}
       </p>

@@ -38,7 +38,7 @@ function Sidenavbar({shownav,setshownav}) {
           <i className="ri-information-line mr-4"></i>About
         </Link>
         <Link target="_blank" to={"https://www.linkedin.com/in/pranay-sherkar-6a0975234/"} className="hover:bg-zinc-600 hover:text-sky-400 px-3 py-2 duration-300 rounded-lg">
-          <i className="ri-linkedin-box-fill mr-4"></i>Linkdin
+          <i className="ri-linkedin-box-fill mr-4"></i>LinkedIn
         </Link>
       </nav>
     </div>

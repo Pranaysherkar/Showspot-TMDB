@@ -1,0 +1,5 @@
+[build]
+  functions = "backend/functions"
+
+[dev]
+  functions = "backend/functions"

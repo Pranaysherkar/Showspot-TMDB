@@ -19,3 +19,7 @@ yarn-error.log*
 # Ignore OS files
 .DS_Store
 Thumbs.db
+
+# Other build artifacts (optional, depending on your project)
+dist/
+build/
